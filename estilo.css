@@ -1,0 +1,153 @@
+.titulo{
+    font-size: 80 px;
+}
+
+
+.container{
+    background-color: aliceblue;
+    display: flex;
+    width: 100vw;
+}
+.imagen1{
+    align-items: center;
+    flex: 1;
+    display:flex;
+    height: 15vh;
+    justify-content:right;
+}
+.titulo{
+    align-items: center;
+    background-color:lightsteelblue;
+    display: flex;
+    flex: 1;
+    height: 15vh;
+    justify-content:center;
+}
+
+.imagen2{
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 15vh;
+    justify-content:left;
+}
+.container2{
+height: 100vh;
+display: grid; 
+grid-template-columns: repeat(5,1fr);
+grid-template-rows: repeat(6,1fr);
+grid-template-areas:
+"main main main main2 main2"
+"main main main main2 main2"
+"main main main main2 main2"
+"cua1 cua2 cua3 cua4 cua5"
+"cua1 cua2 cua3 cua4 cua5"
+"cua1 cua2 cua3 cua4 cua5"
+;
+gap:20px;
+}
+.main{
+background-color:white;
+grid-area: main;
+text-align: center;
+}
+
+.main2{
+    text-align: justify;
+    background-color: aliceblue;
+    padding: 20px;
+    grid-area: main2;
+   
+  
+}
+.imagenn1{
+   max-width: 100%; 
+   place-content: center;
+}
+.cua1{
+    background-color: lightsteelblue;
+    grid-area: cua1;
+    place-content: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+.cua2{
+    background-color:lightsteelblue;
+    grid-area: cua2;
+    place-content: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+.cua3{
+    background-color: lightsteelblue;
+    grid-area: cua3;
+    place-content: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+.cua4{
+    background-color: lightsteelblue;
+    grid-area: cua4;
+    place-content: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+.cua5{
+    background-color:lightsteelblue;
+    grid-area: cua5;
+    place-content: center;
+    text-align: justify;
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    background-color:lightsteelblue;
+    overflow: hidden;
+    margin: 14px 0;
+}
+ nav{
+    max-width: 1200px;
+    margin:  0 auto;
+ }
+ nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+ }
+nav ul li a{
+    text-decoration: none;
+    color:aliceblue;
+    padding: 15px 20px;
+    display: block;
+    font-size: 1.1rem;
+
+}
+
+nav ul li:hover{
+background:darkorange;
+color: black;
+} 
+ 
+@media only screen and (max-width:768px){
+    nav ul li {
+        display: block;
+        margin-right: 0;
+    }
+    nav ul li a {
+       text-align: center;
+    }
+}
+
+footer{
+    text-align: center;
+background-color:aliceblue;
+   }
+
+
+
+    
