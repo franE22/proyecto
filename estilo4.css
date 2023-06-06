@@ -1,111 +1,89 @@
-.titulo{
-    font-size: 80 px;
+
+
+
+
+
+.slide-contenedor{
+    max-width:100%;
+    max-height: 100vh;
+    width: 800px;
+    height:500px;
+    position: relative;
+    overflow: hidden;
+    grid-area: slide;
+    /* margin: auto; */
 }
 
+/* .miSlider{
+    display: none;
+    transition: 2s;
+    max-height: 100vh;
+} */
 
-.container{
-    background-color: aliceblue;
+.miSlider img{
+    width: 100%;
+    max-height: 100vh;
+    height: inherit;
+    object-fit: cover;
+    vertical-align: top;
+    transition: 2s;
+}
+
+.direcciones{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
     display: flex;
-    width: 100vw;
-}
-.imagen1{
+    justify-content: space-between;
     align-items: center;
-    flex: 1;
-    display:flex;
-    height: 15vh;
-    justify-content:right;
+    font-size: 20px;
 }
-.titulo{
-    align-items: center;
-    background-color:lightsteelblue;
+
+.direcciones a{
+    color: #fff;
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.direcciones a:hover{
+    background: rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+.barras{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
-    flex: 1;
-    height: 15vh;
-    justify-content:center;
+    justify-content: center;
+    margin-bottom:15px;
 }
 
-.imagen2{
-    align-items: center;
-    display: flex;
-    flex: 1;
-    height: 15vh;
-    justify-content:left;
-}
-.container2{
-height: 100vh;
-display: grid; 
-grid-template-columns: repeat(5,1fr);
-grid-template-rows: repeat(6,1fr);
-grid-template-areas:
-"main main main main2 main2"
-"main main main main2 main2"
-"main main main main2 main2"
-"cua1 cua2 cua3 cua4 cua5"
-"cua1 cua2 cua3 cua4 cua5"
-"cua1 cua2 cua3 cua4 cua5"
-;
-gap:20px;
-}
-.main{
-background-color:aliceblue;
-grid-area: main;
-place-content: center;
-padding: 20px;
-text-align: center;
+.barra{
+    cursor: pointer;
+    height:2px;
+    width: 25px;
+    margin: 0 2px;
+    background: #dcdde1;
+    display: inline-block;
+    margin-left: 3px;
 }
 
-.main2{
-    text-align: justify;
-    background-color: aliceblue;
-    padding: 20px;
-    grid-area: main2;
-   
-  
-}
-.imagenn1{
-   max-width: 100%; 
-   place-content: center;
-}
-.cua1{
-    background-color: lightsteelblue;
-    grid-area: cua1;
-    place-content: center;
-    text-align: justify;
-    padding: 20px;
+.active{
+    background-color: #e74c3c;
 }
 
-.cua2{
-    background-color:lightsteelblue;
-    grid-area: cua2;
-    place-content: center;
-    text-align: justify;
-    padding: 20px;
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;    
 }
 
-.cua3{
-    background-color: lightsteelblue;
-    grid-area: cua3;
-    place-content: center;
-    text-align: justify;
-    padding: 20px;
+@keyframes fade {
+    from {opacity: .4;}
+    to{opacity:1;}
 }
-
-.cua4{
-    background-color: lightsteelblue;
-    grid-area: cua4;
-    place-content: center;
-    text-align: justify;
-    padding: 20px;
-}
-
-.cua5{
-    background-color:lightsteelblue;
-    grid-area: cua5;
-    place-content: center;
-    text-align: justify;
-    padding: 20px;
-}
-
 .menu{
     background-color:lightsteelblue;
     color: #fff;
@@ -263,27 +241,56 @@ text-align: center;
     }
 }
 
-
-footer{
-    text-align: center;
-background-color:aliceblue;
-   }
-
-   @media (max-width:700px){
-    .container2{
-       
-        grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(7,1fr);
-        grid-template-areas:
-        "main"
-        "main2"
-        "cua1"
-        "cua2"
-        "cua3"
-        "cua4"
-        "cua5"
-        ;
-        gap:20px;
-        }
-   }
+.square {
+    width: 500px;
+    height: 200px;
+    border-radius: 8px;
+    background-color: lightsteelblue;
+    transition-duration: 600ms;
+    transition-timing-function: ease;
+    padding: 8px;
+  }
+  
+  .square.tp-transform {
+    transition-property: transform;
+  }
+  
+  .square.tp-color {
+    transition-property: background-color;
+  }
+  
+  .square.tp-both {
+    transition-property: background-color, transform;
+  
+    /* 
+    You can also use the keyword `all`, e.g.:
     
+    transition-property: all;
+    */
+  }
+  
+  .square.tp-none {
+    transition-property: none;
+  }
+  
+  .square:is(:hover, :focus) {
+    transform: scale(1.3);
+    background-color: #798499;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+  }
+  
+  .wrapper .square:nth-child(odd) {
+    justify-self: end;
+  }
+  
+  .wrapper .square:nth-child(even) {
+    justify-self: start;
+  }
+  
+
+  
